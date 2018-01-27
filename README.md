@@ -22,7 +22,7 @@
 - Unix export NODE_ENV=development or prodution or test
 - put Facebook, Google id in app.module.ts
 - sudo mongod
-- cd backedn
+- cd backend
 - node server.js
 - cd webapp
 - ng serve
