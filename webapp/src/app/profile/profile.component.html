@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 ">
+      <form class="form-horizontal">
+        <fieldset>
+          <form id="register-form" (ngSubmit)="updateProfile()" method="post" role="form">
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Upload photo"></label>
+              <div class="col-md-6">
+                <a><img src="" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Upload photo">Upload photo</label>
+              <div class="col-md-4">
+                <input id="Upload photo" name="Upload photo" class="input-file" type="file">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Name (Full name)">Name</label>
+              <div class="col-md-8">
+                <div class="input-group">
+                  <input id="firstName" name="firstName" [(ngModel)]="user.firstName" type="text" placeholder="{{user.firstName}}" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Name (Full name)">Surname</label>
+              <div class="col-md-8">
+                <div class="input-group">
+                  <input id="lastName" name="lastName" [(ngModel)]="user.lastName" name="lastName" type="text" placeholder="{{user.lastName}}" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Date Of Birth">Date Of Birth</label>
+              <div class="col-md-4">
+                <my-date-picker name="mydate" [options]="myDatePickerOptions" [selDate]="selDate" [(ngModel)]="user.birthDay" required>{{user.birthDay}}</my-date-picker>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Email Address">Phone</label>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input id="phone" name="phone" [(ngModel)]="user.phone" name="phone" type="text" placeholder="{{user.phone}}" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Email Address">Email Address</label>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input type="email" [(ngModel)]="user.email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" data-error="Bruh, that email address is invalid" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="City">Citta</label>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input id="city" [(ngModel)]="user.city" name="city" type="text" placeholder="{{user.city}}" class="form-control">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Roles Known">Roles</label>
+              <div class="col-md-4">
+                <div class="checkbox">
+                  <div>
+                    <label><input type="checkbox" name="Traveler" [(ngModel)]="user.traveler" [checked]="user.traveler" /> Traveler</label>
+                    <label><input type="checkbox" name="AreaExpert" [(ngModel)]="user.expert" [checked]="user.expert" /> Esperto</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Languages Known">Languages Known</label>
+              <div class="col-md-4">
+                <div class="checkbox">
+                  <div>
+                    <label><input type="checkbox" name="English" [(ngModel)]="user.english" [checked]="user.english" /> English</label>
+                    <label><input type="checkbox" name="French" [(ngModel)]="user.french" [checked]="user.french" /> French</label>
+                    <label><input type="checkbox" name="Italian" [(ngModel)]="user.italian" [checked]="user.italian" /> Italian </label>
+                    <label><input type="checkbox" name="German" [(ngModel)]="user.german" [checked]="user.german" /> German </label>
+                    <label><input type="checkbox" name="Spanish" [(ngModel)]="user.spanish" [checked]="user.spanish" /> Spanish </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label" for="Description (max 200 words)">Description (max 200 words)</label>
+              <div class="col-md-8">
+                <textarea class="form-control" rows="10" id="Overview" name="Overview" [(ngModel)]="user.description">{{description}}</textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-2 control-label"></label>
+              <div class="col-md-2">
+                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn-success btn btn-register" value="Register Now">
+              </div>
+            </div>
+          </form>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

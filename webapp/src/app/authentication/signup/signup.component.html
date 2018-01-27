@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+        <div class="panel-heading">
+          <div class="row">
+            <div class="col-xs-6">
+              <a routerLink="/signin" id="login-form-link">Login</a>
+            </div>
+            <div class="col-xs-6">
+              <a routerLink="/signup" class="active" id="register-form-link">Register</a>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <form id="register-form" (ngSubmit)="signup()" method="post" role="form">
+                <div class="form-group">
+                  <input type="email" [(ngModel)]="user.email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" data-error="Bruh, that email address is invalid" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="user.firstName" name="firstName" id="firstName" tabindex="1" class="form-control" placeholder="Nome" value="">
+                </div>
+                <div class="form-group">
+                  <input type="text" [(ngModel)]="user.lastName" name="lastName" id="cognome" tabindex="1" class="form-control" placeholder="Cognome" value="">
+                </div>
+                <div class="form-group">
+                  <input type="password" [(ngModel)]="user.password" name="Password" id="password" tabindex="2" class="form-control" placeholder="Password" value="">
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="text-center">
+                    <button type="submit" (click)="socialSignIn('google')"  class="btn btn-social-icon btn-lg btn-google-plus"><i class="fa fa-google-plus"></i></button>
+                    <button type="submit" (click)="socialSignIn('facebook')" class="btn btn-social-icon btn-lg btn-facebook"><i class="fa fa-facebook"></i></button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <div class="text-center">
+                        <p>{{errorMessage}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
